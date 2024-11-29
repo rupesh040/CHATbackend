@@ -14,7 +14,7 @@ app.use(cors());
 
 const PORT = process.env.PORT
 
-
+connectDB();
 app.use("/api/auth", authRoutes)
 app.use("/api/message",messageRoutes)
 
@@ -25,5 +25,4 @@ app.get('/',(req,res) => {
 
 server.listen(PORT, () => {
     console.log("Server is Running in Port: " + PORT)
-    connectDB()
 })
