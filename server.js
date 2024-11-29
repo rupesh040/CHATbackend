@@ -6,7 +6,6 @@ import CookieParser from "cookie-parser";
 import messageRoutes from "./routes/message.route.js"
 import cors from "cors"
 import { app,  server } from "./config/socket.js";
-import aiRoutes from "./routes/ai.route.js"
 
 dotenv.config()
 app.use(express.json({ limit: '100mb' }));
@@ -21,7 +20,7 @@ const PORT = process.env.PORT
 
 app.use("/api/auth", authRoutes)
 app.use("/api/message",messageRoutes)
-// app.use("/api/ai",aiRoutes)
+
 
 server.listen(PORT, () => {
     console.log("Server is Running in Port: " + PORT)
