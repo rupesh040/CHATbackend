@@ -11,7 +11,7 @@ dotenv.config()
 app.use(express.json({ limit: '100mb' }));
 app.use(CookieParser());
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://a-ichat-mocha.vercel.app",
     credentials:true
 }));
 
