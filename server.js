@@ -10,10 +10,7 @@ import { app,  server } from "./config/socket.js";
 dotenv.config()
 app.use(express.json({ limit: '100mb' }));
 app.use(CookieParser());
-app.use(cors({
-    origin:"https://a-ichat-mocha.vercel.app",
-    credentials:true
-}));
+app.use(cors());
 
 const PORT = process.env.PORT
 
