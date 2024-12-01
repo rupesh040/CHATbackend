@@ -12,7 +12,7 @@ app.use(express.json({ limit: '100mb' }));
 app.use(CookieParser());
 app.use(cors(
     {
-     origin: "*",
+     origin: "https://chat.hyweb.in",
      methods: ['GET', 'POST', 'PUT', 'DELETE'], 
      credentials: true
 
