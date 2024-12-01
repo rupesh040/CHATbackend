@@ -9,5 +9,9 @@ router.get("/:id",protectRoute, getMessages);
 router.post("/send/:id",protectRoute,sendMessage);
 router.post("/save",protectRoute,sendAiMessage);
 router.post("/get",protectRoute,getAiMessages);
+router.post("/comment",protectRoute,comment);
+router.post("/like",protectRoute,like);
+
+
 
 export default router;
