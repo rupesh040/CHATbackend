@@ -67,6 +67,7 @@ export const login = async (req, res) => {
             fullname: user.fullname,
             email: user.email,
             profilePic: user.profilePic,
+            message:"Login successfully"
         })
     } catch (error) {
         res.status(500).json({ message: "Internal Server Error" });
