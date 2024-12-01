@@ -6,6 +6,8 @@ import CookieParser from "cookie-parser";
 import messageRoutes from "./routes/message.route.js"
 import cors from "cors"
 import { app,  server } from "./config/socket.js";
+import path from "path";
+
 
 dotenv.config()
 app.use(express.json({ limit: '100mb' }));
@@ -32,6 +34,17 @@ const PORT = process.env.PORT
 connectDB();
 app.use("/api/auth", authRoutes)
 app.use("/api/message",messageRoutes)
+
+
+if (process.env.NODE_ENV === 'production') {
+    const dirPath = path.resolve();
+
+    app.use(express.static('./Chat-app/dist'))
+    app.get('*', (req,res) => {
+        res.sendFile(path.resolve(dirPath, "./Chat-app/dist","index.html"));
+    })
+}
+
 
 app.get('/',(req,res) => {
     res.send("API WORKING")
