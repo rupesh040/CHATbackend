@@ -6,11 +6,13 @@ const app = express();
 const server = http.createServer(app);
 
 const io = new Server(server, {
-    cors: {
-     origin: "https://chat.hyweb.in",
-     methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-     credentials: true
-    },});
+    cors:  {
+        origin: 'https://chat.hyweb.in', // Frontend origin
+        methods: ['GET', 'POST'], // Allowed HTTP methods
+        allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+        credentials: true // Enable credentials (cookies)
+    }
+    ,});
 
 export function getReceiverSocketId(userId) {
     return userSocketMap[userId];
