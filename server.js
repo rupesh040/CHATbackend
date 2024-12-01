@@ -10,9 +10,7 @@ import { app,  server } from "./config/socket.js";
 dotenv.config()
 app.use(express.json({ limit: '100mb' }));
 app.use(CookieParser());
-app.use(cors({
-    origin:"*"
-}));
+app.use(cors());
 
 const PORT = process.env.PORT
 
