@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors:{
-        origin:"https://a-ichat-mocha.vercel.app" // Removed array and trailing slash
+        origin:"*" // Removed array and trailing slash
     }
 });
 
