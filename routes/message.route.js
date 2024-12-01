@@ -1,5 +1,5 @@
 import express from "express";
-import { getAiMessages, getMessages, getUsers, sendAiMessage, sendMessage } from "../controller/message.controller.js";
+import { comment, getAiMessages, getMessages, getUsers, like, sendAiMessage, sendMessage } from "../controller/message.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
